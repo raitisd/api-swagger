@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/transaction.v1.4.schema.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "id",
+      "type": "string"
+    },
+    "source_id": {
+      "id": "source_id",
+      "type": "string"
+    },
+    "original_reference": {
+      "id": "original_reference",
+      "type": "string"
+    },
+    "created_at": {
+      "id": "created_at",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "id": "updated_at",
+      "type": "string",
+      "format": "date-time"
+    },
+    "currency": {
+      "id": "currency",
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "total_price": {
+      "id": "total_price",
+      "type": "number",
+      "format": "float"
+    },
+    "total_price_net": {
+      "id": "total_price_net",
+      "type": "number",
+      "format": "float"
+    },
+    "total_tax": {
+      "id": "total_tax",
+      "type": "number",
+      "format": "float"
+    },
+    "status": {
+      "id": "status",
+      "type": "object",
+      "properties": {
+        "global": {
+          "id": "global",
+          "type": "string",
+          "enum": [
+            "open",
+            "completed",
+            "cancelled"
+          ]
+        },
+        "payment": {
+          "id": "payment",
+          "type": "string",
+          "enum": [
+            "not_paid",
+            "processing",
+            "partial",
+            "paid",
+            "cancelled",
+            "refunded"
+          ]
+        },
+        "shipping": {
+          "id": "payment",
+          "type": "string",
+          "enum": [
+            "not_shipped",
+            "pickpack",
+            "pending",
+            "partial",
+            "completed",
+            "returned"
+          ]
+        }
+      },
+      "required": [
+        "global"
+      ]
+    },
+    "products": {
+      "id": "products",
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "product.v1.2.schema.json#/product"
+          },
+          {
+            "properties": {
+              "quantity": {
+                "id": "quantity",
+                "type": "number"
+              },
+              "total_line_items": {
+                "id": "total_line_items",
+                "type": "number"
+              },
+              "tax_rate": {
+                "id": "tax_rate",
+                "type": "number",
+                "format": "float"
+              },
+              "total_line_items_tax": {
+                "id": "total_line_items_tax",
+                "type": "number"
+              },
+                "shipping_provider": {
+                  "id": "shipping_provider",
+                  "type": "string"
+                },
+                "tracking_url": {
+                  "id": "tracking_url",
+                  "type": "string"
+                }
+            },
+            "required": [
+              "quantity",
+              "total_line_items",
+              "tax_rate",
+              "total_line_items_tax"
+            ]
+          }
+        ]
+      }
+    },
+    "shipping": {
+      "id": "shipping",
+      "type": "object",
+      "properties": {
+        "address": {
+          "allOf": [
+            {
+              "$ref": "address.v1.2.schema.json#/"
+            },
+            {
+              "properties": {
+                "price": {
+                  "id": "price",
+                  "type": "number",
+                  "format": "float"
+                }
+              },
+              "required": [
+                "price"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "billing": {
+      "id": "billing",
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "address.v1.2.schema.json#/"
+        }
+      }
+    },
+    "buyer": {
+      "$ref": "buyer.v1.2.schema.json#/"
+    }
+  }
+}

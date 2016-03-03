@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/meta.v1.0.schema.json",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "id": "event_id",
+      "type": "string"
+    },
+    "event_name": {
+      "id": "event_name",
+      "type": "string",
+      "default": "transaction.update"
+    },
+    "entities": {
+      "id": "entities",
+      "type": "object",
+      "properties": {
+        "transaction": {
+          "id": "transaction",
+          "type": "string",
+          "default": "1.4"
+        },
+        "payment": {
+          "id": "payment",
+          "type": "string",
+          "default": "1.0"
+        },
+        "profile": {
+          "id": "profile",
+          "type": "string",
+          "default": "1.0"
+        },
+        "shipment": {
+          "id": "shipment",
+          "type": "string",
+          "default": "1.0"
+        },
+        "product": {
+          "id": "product",
+          "type": "string",
+          "default": "1.2"
+        }
+      }
+    },
+    "origin": {
+      "id": "origin",
+      "type": "object",
+      "properties": {
+        "platform": {
+          "id": "platform",
+          "type": "string"
+        },
+        "connection_uuid": {
+          "id": "connection_uuid",
+          "type": "string"
+        },
+        "retailer_id": {
+          "id": "retailer_id",
+          "type": "number"
+        },
+        "user_id": {
+          "id": "user_id",
+          "type": "string"
+        }
+      },
+      "required" : ["user_id", "connection_uuid"]
+    },
+    "created_at": {
+      "id": "created_at",
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "event_id",
+    "event_name",
+    "entities",
+    "origin",
+    "created_at"
+  ]
+}

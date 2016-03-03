@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/profile.v1.2.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "source_id",
+    "original_reference",
+    "platform_name",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "id": "id",
+      "type": "string"
+    },
+    "source_id": {
+      "id": "source_id",
+      "type": "string"
+    },
+    "original_reference": {
+      "id": "original_reference",
+      "type": "string"
+    },
+    "platform_id": {
+      "id": "platform_id",
+      "type": "string"
+    },
+    "platform_name": {
+      "id": "platform_name",
+      "type": "string"
+    },
+    "active": {
+      "id": "active",
+      "type": "boolean"
+    },
+    "status": {
+      "id": "status",
+      "type": "string"
+    },
+    "type": {
+      "id": "type",
+      "type": "string"
+    },
+    "display_name": {
+      "id": "display_name",
+      "type": "string"
+    },
+    "url": {
+      "id": "url",
+      "type": "string",
+      "pattern": "((([A-Za-z]{3,9}:(?:\\\/\\\/)?)(?:[\\-;:&=\\+\\$,\\w]+@)?[A-Za-z0-9\\.\\-]+|(?:www\\.|[\\-;:&=\\+\\$,\\w]+@)[A-Za-z0-9\\.\\-]+)((?:\\\/[\\+~%\\\/\\.\\w\\-]*)?\\??(?:[\\-\\+=&;%@\\.\\w]*)#?(?:[\\.\\!\\\/\\\\\\w]*))?)"
+    },
+    "avatar_url": {
+      "id": "avatar_url",
+      "type": "string",
+      "pattern": "((([A-Za-z]{3,9}:(?:\\\/\\\/)?)(?:[\\-;:&=\\+\\$,\\w]+@)?[A-Za-z0-9\\.\\-]+|(?:www\\.|[\\-;:&=\\+\\$,\\w]+@)[A-Za-z0-9\\.\\-]+)((?:\\\/[\\+~%\\\/\\.\\w\\-]*)?\\??(?:[\\-\\+=&;%@\\.\\w]*)#?(?:[\\.\\!\\\/\\\\\\w]*))?)"
+    },
+    "language": {
+      "id": "language",
+      "type": "string",
+      "pattern": "^[A-Za-z]{2}$"
+    },
+    "locale": {
+      "id": "locale",
+      "type": "string",
+      "pattern": "^[a-z]{2}-[A-Z]{2}$"
+    },
+    "currency": {
+      "id": "currency",
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "contact": {
+      "$ref": "contact.v1.0.schema.json#/"
+    },
+    "created_at": {
+      "id": "created_at",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "id": "updated_at",
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

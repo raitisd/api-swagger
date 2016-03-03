@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/address.v1.2.schema.json",
+  "type": "object",
+  "properties": {
+    "type": {
+      "id": "address/type",
+      "type": "string"
+    },
+    "name": {
+      "id": "address/name",
+      "type": "string"
+    },
+    "line_1": {
+      "id": "address/line_1",
+      "type": "string"
+    },
+    "line_2": {
+      "id": "address/line_2",
+      "type": "string"
+    },
+    "city": {
+      "id": "address/city",
+      "type": "string"
+    },
+    "region": {
+      "id": "address/region",
+      "type": "string"
+    },
+    "zip": {
+      "id": "address/zip",
+      "type": "string"
+    },
+    "country": {
+      "id": "address/country",
+      "type": "string",
+      "pattern": "[A-Za-z]{2}"
+    },
+    "verified": {
+      "id": "address/verified",
+      "type": "boolean"
+    },
+    "default": {
+      "id": "address/default",
+      "type": "boolean"
+    }
+  }
+}

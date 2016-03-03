@@ -1,0 +1,91 @@
+{
+  "product": {
+    "id": "0e0758b7c1afffda2c8e4b5458ba01d2a98a10fa3359632acb3d6fe7a67b09da",
+    "source_id": "5e81bb2c76b6ad3b4ab4d3033229d70091534c06042b1d5ad1c4d8d55552821d",
+    "original_reference": "a9953093",
+    "url": "http://www.gvhwebstore.nl/gevavi-gs39-chelsey-hoge-veiligheidsschoen-s3-brui.html",
+    "created_at": "2014-12-17T18:49:33+0000",
+    "updated_at": "2014-12-17T18:50:21+0000",
+    "name": [
+      {
+        "language": "nl",
+        "value": "GS39 CHELSEY Hoge Veiligheidsschoen S3 Bruin"
+      }
+    ],
+    "active": true,
+    "condition": "new",
+    "currency": "EUR",
+    "price_per_unit": 69.5,
+    "tax_rate": 0.19,
+    "tax": 12.062,
+    "identifier": {
+      "sku": "12f34",
+      "ean": "5673s2435765432470",
+      "asin": "3214673211-21437",
+      "id": "a9953093"
+    },
+    "stock_information": {
+      "in_stock": true,
+      "inventory_level": 3,
+      "inventory_unit": "piece"
+    },
+    "description": [
+      {
+        "language": "nl",
+        "value": "dis is someding"
+      }
+    ],
+    "categories": [
+      {
+        "language": "nl",
+        "value": "category"
+      }
+    ],
+    "picture_urls": [
+      {
+        "id": 18329785,
+        "url_original": "http://static.webshopapp.com/shops/028306/files/019836329/4802-gs390502.jpg",
+        "url_big": "http://static.webshopapp.com/shops/028306/files/019836329/4802-gs390502.jpg",
+        "url_medium": "http://static.webshopapp.com/shops/028306/files/019836329/4802-gs390502.jpg",
+        "url_small": "http://static.webshopapp.com/shops/028306/files/019836329/50x50x2/4802-gs390502.jpg"
+      },
+      {
+        "id": 18329783,
+        "url_original": "http://static.webshopapp.com/shops/028306/files/019836323/4802-gs390501.jpg",
+        "url_big": "http://static.webshopapp.com/shops/028306/files/019836323/4802-gs390501.jpg",
+        "url_medium": "http://static.webshopapp.com/shops/028306/files/019836323/4802-gs390501.jpg",
+        "url_small": "http://static.webshopapp.com/shops/028306/files/019836323/50x50x2/4802-gs390501.jpg"
+      }
+    ],
+    "brand": {
+      "id": 142383,
+      "name": {
+        "language": "nl",
+        "value": "Gevavi"
+      }
+    },
+    "variants": [
+      {
+        "id": 17484299
+      },
+      {
+        "id": 17484297
+      },
+      {
+        "id": 17484295
+      },
+      {
+        "id": 17484293
+      },
+      {
+        "id": 17484291
+      },
+      {
+        "id": 17484289
+      },
+      {
+        "id": 17484287
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/product.v1.0.schema.json",
+  "type": "object",
+  "properties": {
+    "product": {
+      "id": "product",
+      "type": "object",
+      "properties": {
+        "identifier": {
+          "id": "identifier",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "id",
+              "type": "integer"
+            },
+            "sku": {
+              "id": "sku",
+              "type": "string"
+            }
+          }
+        },
+        "name": {
+          "id": "name",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-866"
+          }
+        },
+        "description": {
+          "id": "description",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-811"
+          }
+        },
+        "categories": {
+          "id": "categories",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-495"
+          }
+        },
+        "variants": {
+          "id": "variants",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-110"
+          }
+        },
+        "tags": {
+          "id": "tags",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-917"
+          }
+        },
+        "attributes": {
+          "id": "attributes",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-642"
+          }
+        },
+        "brand": {
+          "id": "brand",
+          "type": "object",
+          "properties": {
+            "name": {
+              "id": "name",
+              "type": "object",
+              "properties": {
+                "language": {
+                  "id": "language",
+                  "type": "string"
+                },
+                "value": {
+                  "id": "value",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "language",
+                "value"
+              ]
+            }
+          }
+        },
+        "price_per_unit": {
+          "id": "price_per_unit",
+          "type": "string"
+        },
+        "currency": {
+          "id": "currency",
+          "type": "string"
+        },
+        "url": {
+          "id": "url",
+          "type": "string"
+        },
+        "picture_urls": {
+          "id": "picture_urls",
+          "type": "array",
+          "items": {
+            "id": "auto-generated-schema-378"
+          }
+        },
+        "created_at": {
+          "id": "created_at",
+          "type": "string"
+        },
+        "updated_at": {
+          "id": "updated_at",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "product"
+  ]
+}

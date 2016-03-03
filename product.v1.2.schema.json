@@ -1,0 +1,287 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/product.v1.2.schema.json",
+  "type": "object",
+  "properties": {
+    "product": {
+      "id": "product",
+      "type": "object",
+      "properties": {
+        "id": {
+          "id": "id",
+          "type": "string"
+        },
+        "source_id": {
+          "id": "source_id",
+          "type": "string"
+        },
+        "original_reference": {
+          "id": "original_reference",
+          "type": "string"
+        },
+        "url": {
+          "id": "url",
+          "type": "string"
+        },
+        "created_at": {
+          "id": "created_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "id": "updated_at",
+          "type": "string",
+          "format": "date-time"
+        },
+        "name": {
+          "id": "name",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "id": "language",
+                "type": "string"
+              },
+              "value": {
+                "id": "value",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "active": {
+          "id": "active",
+          "type": "boolean"
+        },
+        "condition": {
+          "id": "condition",
+          "enum": [
+            "new",
+            "used",
+            "refurbished"
+          ],
+          "type": "string"
+        },
+        "currency": {
+          "$ref": "currency.v1.0.schema.json#/"
+        },
+        "price_per_unit": {
+          "id": "price_per_unit",
+          "type": "number"
+        },
+        "tax_rate": {
+          "id": "tax_rate",
+          "type": "number"
+        },
+        "tax": {
+          "id": "tax",
+          "type": "number"
+        },
+        "identifier": {
+          "id": "identifier",
+          "type": "object",
+          "properties": {
+            "sku": {
+              "id": "sku",
+              "type": "string"
+            },
+            "ean": {
+              "id": "ean",
+              "type": "string"
+            },
+            "asin": {
+              "id": "asin",
+              "type": "string"
+            },
+            "upc": {
+              "id": "id",
+              "type": "string"
+            },
+            "id": {
+              "id": "id",
+              "type": "string"
+            }
+          }
+        },
+        "stock_information": {
+          "id": "stock_information",
+          "type": "object",
+          "required": [
+            "in_stock"
+          ],
+          "properties": {
+            "in_stock": {
+              "id": "in_stock",
+              "type": "boolean"
+            },
+            "inventory_level": {
+              "id": "inventory_level",
+              "type": "integer"
+            },
+            "inventory_unit": {
+              "id": "inventory_unit",
+              "type": "string"
+            }
+          }
+        },
+        "description": {
+          "id": "description",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "id": "language",
+                "type": "string"
+              },
+              "value": {
+                "id": "value",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "additional_attributes": {
+          "properties": {
+            "colors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "sizes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "weight": {
+              "type": "number"
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number"
+                },
+                "height": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "length",
+                "width",
+                "height"
+              ]
+            }
+          }
+        },
+        "categories": {
+          "id": "categories",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "language": {
+                "id": "language",
+                "type": "string"
+              },
+              "value": {
+                "id": "value",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "picture_urls": {
+          "id": "picture_urls",
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "id",
+                  "type": "integer"
+                },
+                "url_original": {
+                  "id": "url_original",
+                  "type": "string"
+                },
+                "url_big": {
+                  "id": "url_big",
+                  "type": "string"
+                },
+                "url_medium": {
+                  "id": "url_medium",
+                  "type": "string"
+                },
+                "url_small": {
+                  "id": "url_small",
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "brand": {
+          "id": "brand",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "id",
+              "type": "integer"
+            },
+            "name": {
+              "id": "name",
+              "type": "object",
+              "properties": {
+                "language": {
+                  "id": "language",
+                  "type": "string"
+                },
+                "value": {
+                  "id": "value",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "variants": {
+          "id": "variants",
+          "type": "array",
+          "items": [
+            {
+              "$ref": "#/original_reference"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "original_reference",
+        "url",
+        "created_at",
+        "updated_at",
+        "name",
+        "active",
+        "currency",
+        "price_per_unit",
+        "tax_rate",
+        "description",
+        "categories",
+        "picture_urls",
+        "stock_information"
+      ]
+    }
+  },
+  "required": [
+    "product"
+  ]
+}

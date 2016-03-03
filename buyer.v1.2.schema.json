@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/buyer.v1.2.schema.json",
+  "type": "object",
+  "required": [
+    "buyer_id",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "id": "id",
+      "type": "string"
+    },
+    "source_id": {
+      "id": "source_id",
+      "type": "string"
+    },
+    "original_reference": {
+      "id": "original_reference",
+      "type": "string"
+    },
+    "url": {
+      "id": "url",
+      "type": "string"
+    },
+    "active": {
+      "id": "active",
+      "type": "boolean"
+    },
+    "status": {
+      "id": "status",
+      "type": "string"
+    },
+    "type": {
+      "id": "type",
+      "type": "string",
+      "enum": [
+        "company",
+        "person",
+        "other"
+      ]
+    },
+    "first_name": {
+      "id": "first_name",
+      "type": "string"
+    },
+    "last_name": {
+      "id": "last_name",
+      "type": "string"
+    },
+    "language": {
+      "id": "language",
+      "type": "string",
+      "pattern": "^[A-Za-z]{2}$"
+    },
+    "locale": {
+      "id": "locale",
+      "type": "string",
+      "pattern": "^[a-z]{2}-[A-Z]{2}$"
+    },
+    "currency": {
+      "id": "currency",
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "date_of_birth": {
+      "id": "date_of_birth",
+      "type": "string",
+      "format": "date"
+    },
+    "opt_out": {
+      "id": "opt_out",
+      "type": "boolean"
+    },
+    "note": {
+      "id": "note",
+      "type": "string"
+    },
+    "contact": {
+      "$ref": "contact.v1.0.schema.json#/"
+    },
+    "created_at": {
+      "id": "created_at",
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "id": "updated_at",
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

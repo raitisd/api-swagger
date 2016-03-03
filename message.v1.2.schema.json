@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://api.itembase.com/v1/message.v1.2.schema.json",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "$ref": "meta.v1.2.schema.json#/"
+    },
+    "payload": {
+      "id": "payload",
+      "type": "object"
+    }
+  },
+  "required": [
+    "meta",
+    "payload"
+  ]
+}
