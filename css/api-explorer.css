@@ -886,7 +886,7 @@
         cursor: default
     }
 }
-
+.swagger-section .operations h4{ position:relative;}
 .swagger-section .operations h4:after {
     content: "\E17B";
     font-family: budicon-font !important;
@@ -906,9 +906,9 @@
 }
 
 @media (min-width: 992px) {
-    .swagger-section .operations h4:after {
+    /*.swagger-section .operations h4:after {
         display: none
-    }
+    }*/
 }
 
 /* change
@@ -1649,14 +1649,13 @@ body {
 
 .swagger-section .swagger-ui-wrap {
     line-height: 1;
-    font-family: proxima-nova, sans-serif;
+    font-family: 'Lato', sans-serif; font-weight:400;
     margin-left: auto;
     margin-right: auto
 }
 
 .swagger-section .swagger-ui-wrap b, .swagger-section .swagger-ui-wrap strong {
-    font-family: proxima-nova, sans-serif;
-    font-weight: 700
+    font-family: 'Lato', sans-serif; font-weight:400;
 }
 
 .swagger-section .swagger-ui-wrap blockquote, .swagger-section .swagger-ui-wrap q {
@@ -2430,7 +2429,7 @@ body {
 
 /*swagger styles*/
 
-a,ol li,p,ul li{font-family:Arial,Helvetica,sans-serif}
+a,ol li,p,ul li{font-family: 'Lato', sans-serif; font-weight:400;}
 img{max-width:100%}
 .container{max-width:1130px;padding:0 15px;margin:0 auto}
 h1,h2{margin-top:0}
@@ -2493,14 +2492,13 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
 .swagger-section .sandbox_header{ padding:0 0 20px;}
 .swagger-section .sandbox_header .btn-primary, .swagger-section .sandbox_header .btn-default{ color:#fff; font-size:12px; line-height:15px; font-weight:normal; border-radius:0; padding:7px 14px; border:1px solid #acd1ea; text-align:center; background:#1c89d6; margin:0;}
 #resources_nav .active{ background:#dee6eb; padding-bottom:7px;}
-.swagger-section .sticky-nav [data-navigator] [data-resource].active .item{ background:none; border:none;}
+.swagger-section .sticky-nav [data-navigator] [data-resource].active .item{ background:none; border:none; font-size:14px; line-height:21px; padding:5px 10px 5px 30px;}
 .swagger-section .sticky-nav [data-navigator] [data-resource].active, .swagger-section .sticky-nav [data-navigator] [data-resource].active:before{ color:#3d3c3c;}
 #resources_nav .active{ border-left:3px solid #5da9de;}
 .swagger-section .responses-wrapper{ padding:0;}
 .swagger-section .endpoint{ margin:0 0 80px;}
 .changes-disclaimer{ border:0; margin:0;}
 .swagger-section #swagger_sidebar p{ font-size:14px; line-height:18px;}
-.swagger-section .sticky-nav [data-navigator] [data-resource]:before{ font-size:12px; font-weight:bold; color:#1c89d6; padding:14px 13px;}
 #resources_nav .active
 .swagger-section .swagger-ui-wrap .info_title{ display:block;}
 .swagger-section .sticky-nav [data-navigator] [data-resource]{ border-bottom:1px solid #e3e7e9;}
@@ -2511,7 +2509,7 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
 .swagger-section .parameter-item .small-description .markdown{ float:left;}
 .swagger-section .sticky-nav [data-navigator]{ margin-bottom:25px;}
 .swagger-section pre{ width:100%;}
-.swagger-section .operation > .samples{ width:100%; float:none;}
+.swagger-section .operation > .samples{ width:100%; }
 .swagger-section .operations .model-signature h4{ margin-bottom:0; color:#1d8ad7; cursor:pointer;}
 .swagger-section .token-generator .btn > span{ color:#000;}
 .swagger-section .token-generator .btn{ padding:0;}
@@ -2542,8 +2540,7 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
 }
 
 
-.head{ background:url(../images/banner.jpg) no-repeat top center; position:absolute !important; background-size:cover; height:146px; z-index:9999;}
-.head {
+.head { background:url(../images/banner.jpg) no-repeat top center; position:absolute !important; background-size:cover; height:146px; z-index:9999;
   padding-top: 27px;
 }
 .head .navbar {
@@ -2585,7 +2582,7 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
 .head .navbar ul li.dropdown a {
   display: block;
 }
-.head .navbar ul li.dropdown a:after {
+.head .navbar ul li.dropdown > a:after {
   content: '';
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
@@ -2603,7 +2600,6 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
   position: absolute;
   left: 0;
   top: 85px;
-  width: 100%;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2637,6 +2633,7 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
 }
 .head .navbar ul li.dropdown ul li:last-child a {
   margin-right: 0;
+  background:none;
 }
 .head .navbar ul li.dropdown ul li:hover a {
   color: #fff;
@@ -2645,7 +2642,7 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
   background: none;
   color: #fff;
 }
-.head .navbar ul li.dropdown:hover >a:before {
+.head .navbar ul li.dropdown > a:before {
   position: absolute;
   bottom: 22px;
   left: 0;
@@ -2654,13 +2651,12 @@ h6{font-size:21px;font-family:Arial,Helvetica,sans-serif}
   height: 1px;
   background: #fff;
   content: '';
+  display:none;
 }
-.head .navbar ul li.dropdown:hover >a:after {
+.head .navbar ul li.dropdown.active ul {
   display: block;
 }
-.head .navbar ul li.dropdown:hover ul {
-  display: block;
-}
+.head .navbar ul li.dropdown.active > a:before, .head .navbar ul li.dropdown.active > a:after{ display:block;}
 section.content{ padding-top:146px;}
 .swagger-section .mobile-nav{ cursor:pointer;}
 /**/
@@ -2688,13 +2684,13 @@ text-decoration: none;
 }
 .swagger-section .sticky-nav [data-navigator] .item{ font-size:12px;}
 .swagger-section .sticky-nav [data-navigator] [data-resource]:before{ font-size:12px; }
-.swagger-section .sticky-nav [data-navigator] .item[data-selected]{ color:#626262; font-size:12px;}
+.swagger-section .sticky-nav [data-navigator] .item[data-selected]{ color:#626262; font-size:14px;}
 
 	.swagger-section .sticky-nav span.info{ display:inline-block; padding-left:10px;   }
 	.swagger-section .sticky-nav span{font-size:12px; font-variant:normal !important;}
 	.swagger-section #swagger_sidebar{ float:left; left:auto; overflow-y:auto; min-height:inherit;}
 	.swagger-section .operation{ min-height:inherit;}
-	.swagger-section .operations .model-signature h4{ padding:0; padding-top:20px; }
+	.swagger-section .operations .model-signature h4{ padding:0; margin-top:20px; }
 	.api-popup-scopes .scopes .scope{ border-color:#cfd3d5;}
 	.api-popup-actions .btn.btn-default{color: #333; background-color: #fff; border-color: #ccc;}
 	.api-popup-scopes .scopes .scope:before{ margin-right:0;}
@@ -2710,9 +2706,18 @@ text-decoration: none;
 	.swagger-section .swagger-ui-wrap .info_title{ padding-left:0; padding-bottom:10px;}
 	.swagger-section .sticky-nav span.info .markdown p{ padding:0 !important; margin:0 !important;}
 	.swagger-section #swagger_sidebar.stickyNav{ position:fixed; left:auto; top:0;}
+	.swagger-section .operations h4{ position:relative;}
+	.swagger-section .operations h4:after{ top:9px;}
+	.swagger-section .main-section .container{ max-width:100%; width:100%; padding-left:0;}
+	
+.swagger-section .sticky-nav [data-navigator] [data-resource]:before{ text-transform:uppercase; font-size:14px; text-transform:uppercase;font-weight:bold; color:#1c89d6; padding:11px 13px;}
+@media (max-width: 1600px)
+{
+	p, p.lead{    font-size: 16px;    line-height: 26px;    margin-bottom: 10px;}	
+	.swagger-section h2.operation-title{ font-size:27px; line-height:35px;}
+}
 @media (max-width:1400px)
 {
-	.swagger-section h2.operation-title{ font-size:30px; line-height:35px;}
 	.swagger-section .endpoint{ margin-bottom:25px;}
 }
 @media (max-width:1200px)
@@ -2743,7 +2748,6 @@ text-decoration: none;
 	.swagger-section .mobile-nav:after{ top:29px;}
 	.swagger-section .token-generator{ background:#1c89d6; min-width:inherit;}
 	
-	.swagger-section .sticky-nav > span{    font-size: 0px;  }
 	/*.swagger-section .sticky-nav.fixed > span{  }*/
 	#backToTop{ display:block;}
 	.swagger-section #swagger_sidebar.stickyNav{ top:0; left:0; width:100%; z-index:999; position:fixed;}
@@ -2755,7 +2759,8 @@ text-decoration: none;
 	/*.swagger-section #swagger_sidebar .sticky-nav-placeholder .sticky-nav.nav-open p{ display:block;}*/
 	.swagger-section .sticky-nav [data-navigator]{ display:none; height:auto; transition:none;}
 	.swagger-section .sticky-nav.fixed .mobile-nav:after{ right:20px;}
-	.swagger-section .sticky-nav.nav-open > span, .swagger-section .sticky-nav.nav-open{  font-size: 14px;  font-variant: normal !important;  line-height: 22px;}
+	.swagger-section .sticky-nav.nav-open > span, .swagger-section .sticky-nav.nav-open{ font-size:0; line-height:0;}
+	.swagger-section .sticky-nav > span, .swagger-section .sticky-nav{  font-size: 14px;  font-variant: normal !important;  line-height: 22px;}
 	.swagger-section .sticky-nav [data-navigator] .item[data-selected]:after{ right:20px;}
 	.swagger-section .sticky-nav [data-navigator] .item{ overflow:visible; white-space:normal;}
 	
@@ -2769,7 +2774,7 @@ text-decoration: none;
 	.swagger-section #swagger_sidebar .sticky-nav-placeholder .sticky-nav p{ display:block;}
 .head{ position:fixed !important;}
 .header .navigation .navbar{float:right}
-.navbar-toggle{z-index:999;right:0;margin-top:0;margin-right:0;border:0;padding:9px 0;display:block;top:14px}
+.navbar-toggle{z-index:999;right:0;margin-top:0;margin-right:0;border:0;padding:9px 0;display:block;top:12px}
 .navBtnActive{background:0 0}
 .navbar-toggle .icon-bar{position:relative;display:block;width:30px;height:4px;color:#fff;text-transform:uppercase;text-indent:-55px;background:#fff;transition:all .2s ease-out;opacity:1}
 .navbar-toggle .icon-bar:after,.navbar-toggle .icon-bar:before{content:'';width:30px;height:4px;background:#fff;position:absolute;left:0;transition:all .2s ease-out}
@@ -2849,7 +2854,9 @@ section.content{ padding-top:63px;}
     .swagger-section .mobile-nav span { display: none;}
 	.swagger-section .mobile-nav:after{ display:none;}
 	.head .logo{ margin-left:20px;}
+	.head .navbar ul li.dropdown.active > a:before, .head .navbar ul li.dropdown.active > a:after{ display:none;}
 
+}
 
 @media (max-width:640px)
 {
@@ -2867,4 +2874,5 @@ section.content{ padding-top:63px;}
 	.modal .modal-dialog .modal-body p{ font-size:14px; line-height:18px;}
 	.modal .modal-dialog .modal-header .modal-title{ font-size:23px;}
 	.modal .modal-dialog .modal-footer .btn{ padding:10px 15px;}
+	.swagger-section h2.operation-title{ font-size:23px; line-height:25px;}
 }
