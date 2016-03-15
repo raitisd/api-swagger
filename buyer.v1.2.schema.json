@@ -1,93 +1,110 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://api.itembase.com/v1/buyer.v1.2.schema.json",
+  "id": "http://api.itembase.io/v1/buyer.v1.2.schema.json",
   "type": "object",
-  "required": [
-    "buyer_id",
-    "created_at"
-  ],
-  "properties": {
-    "id": {
-      "id": "id",
-      "type": "string"
+  "allOf": [
+    {
+      "$ref": "./base_buyer.v1.0.schema.json#"
     },
-    "source_id": {
-      "id": "source_id",
-      "type": "string"
-    },
-    "original_reference": {
-      "id": "original_reference",
-      "type": "string"
-    },
-    "url": {
-      "id": "url",
-      "type": "string"
-    },
-    "active": {
-      "id": "active",
-      "type": "boolean"
-    },
-    "status": {
-      "id": "status",
-      "type": "string"
-    },
-    "type": {
-      "id": "type",
-      "type": "string",
-      "enum": [
-        "company",
-        "person",
-        "other"
+    {
+      "properties": {
+        "display_name": {
+          "id": "display_name",
+          "type": "string",
+          "description": "Displayed buyer name i.e. first name and last name or user name."
+        },
+        "url": {
+          "id": "url",
+          "type": "string",
+          "description": "A url to this buyer.",
+          "pattern": "^(https?|ftp|mailto):\/\/.+$"
+        },
+        "active": {
+          "id": "active",
+          "type": "boolean",
+          "description": "Whether the customer's account is active or deactivated."
+        },
+        "status": {
+          "id": "status",
+          "type": "string",
+          "description": "Status of the buyer.",
+          "enum": [
+            "new",
+            "confirmed",
+            "deleted"
+          ]
+        },
+        "type": {
+          "id": "type",
+          "type": "string",
+          "description": "Type of the buyer.",
+          "enum": [
+            "company",
+            "person",
+            "government",
+            "other"
+          ]
+        },
+        "first_name": {
+          "id": "first_name",
+          "type": "string",
+          "description": "First name."
+        },
+        "last_name": {
+          "id": "last_name",
+          "type": "string",
+          "description": "Last name."
+        },
+        "language": {
+          "id": "language",
+          "type": "string",
+          "description": "ISO 639-1 2 letter code of the language.",
+          "pattern": "^[a-z]{2}$"
+        },
+        "locale": {
+          "id": "locale",
+          "type": "string",
+          "description": "ISO 639-1 (language) followed by and underscore and a ISO 3166-1 alpha-2 (2-letter country) code.",
+          "pattern": "^[a-z]{2}_[A-Z]{2}$"
+        },
+        "currency": {
+          "$ref": "./currency.v1.0.schema.json#"
+        },
+        "date_of_birth": {
+          "id": "date_of_birth",
+          "type": "string",
+          "description": "An ISO 8601 date format, i.E. YYYY-MM-DD.",
+          "pattern": "^[1-2][0-9]{3}-[0-9]{2}-[0-9]{2}$"
+        },
+        "opt_out": {
+          "id": "opt_out",
+          "type": "boolean",
+          "description": "If the buyer has opted-out of any marketing communication."
+        },
+        "note": {
+          "id": "note",
+          "type": "string",
+          "description": "Free-text notes."
+        },
+        "contact": {
+          "$ref": "./contact.v1.0.schema.json#"
+        },
+        "created_at": {
+          "id": "created_at",
+          "type": "string",
+          "description": "An ISO 8601 date format, i.E. YYYY-MM-DDThh:mm:ss.sTZD.",
+          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+        },
+        "updated_at": {
+          "id": "updated_at",
+          "type": "string",
+          "description": "An ISO 8601 date format, i.E. YYYY-MM-DDThh:mm:ss.sTZD.",
+          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
+        }
+      },
+      "required": [
+        "created_at"
       ]
-    },
-    "first_name": {
-      "id": "first_name",
-      "type": "string"
-    },
-    "last_name": {
-      "id": "last_name",
-      "type": "string"
-    },
-    "language": {
-      "id": "language",
-      "type": "string",
-      "pattern": "^[A-Za-z]{2}$"
-    },
-    "locale": {
-      "id": "locale",
-      "type": "string",
-      "pattern": "^[a-z]{2}-[A-Z]{2}$"
-    },
-    "currency": {
-      "id": "currency",
-      "type": "string",
-      "pattern": "^[A-Z]{3}$"
-    },
-    "date_of_birth": {
-      "id": "date_of_birth",
-      "type": "string",
-      "format": "date"
-    },
-    "opt_out": {
-      "id": "opt_out",
-      "type": "boolean"
-    },
-    "note": {
-      "id": "note",
-      "type": "string"
-    },
-    "contact": {
-      "$ref": "contact.v1.0.schema.json#/"
-    },
-    "created_at": {
-      "id": "created_at",
-      "type": "string",
-      "format": "date-time"
-    },
-    "updated_at": {
-      "id": "updated_at",
-      "type": "string",
-      "format": "date-time"
     }
-  }
+  ]
 }

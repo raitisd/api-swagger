@@ -1,58 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://api.itembase.com/v1/product.v1.2.schema.json",
+  "id": "http://api.itembase.io/v1/product.v1.2.schema.json",
   "type": "object",
-  "properties": {
-    "product": {
-      "id": "product",
-      "type": "object",
+  "allOf": [
+    {
+      "$ref": "./base_product.v1.0.schema.json#"
+    },
+    {
       "properties": {
-        "id": {
-          "id": "id",
-          "type": "string"
-        },
-        "source_id": {
-          "id": "source_id",
-          "type": "string"
-        },
-        "original_reference": {
-          "id": "original_reference",
-          "type": "string"
-        },
         "url": {
           "id": "url",
-          "type": "string"
+          "type": "string",
+          "description": "A url to this product.",
+          "pattern": "^(https?|ftp):\/\/.+$"
         },
         "created_at": {
           "id": "created_at",
           "type": "string",
-          "format": "date-time"
+          "description": "An ISO 8601 date format, i.E. YYYY-MM-DDThh:mm:ss.sTZD.",
+          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
         },
         "updated_at": {
           "id": "updated_at",
           "type": "string",
-          "format": "date-time"
-        },
-        "name": {
-          "id": "name",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "language": {
-                "id": "language",
-                "type": "string"
-              },
-              "value": {
-                "id": "value",
-                "type": "string"
-              }
-            }
-          }
+          "description": "An ISO 8601 date format, i.E. YYYY-MM-DDThh:mm:ss.sTZD.",
+          "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
         },
         "active": {
           "id": "active",
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Whether the product is active or deactivated."
         },
         "condition": {
           "id": "condition",
@@ -61,115 +38,100 @@
             "used",
             "refurbished"
           ],
-          "type": "string"
-        },
-        "currency": {
-          "$ref": "currency.v1.0.schema.json#/"
-        },
-        "price_per_unit": {
-          "id": "price_per_unit",
-          "type": "number"
-        },
-        "tax_rate": {
-          "id": "tax_rate",
-          "type": "number"
-        },
-        "tax": {
-          "id": "tax",
-          "type": "number"
-        },
-        "identifier": {
-          "id": "identifier",
-          "type": "object",
-          "properties": {
-            "sku": {
-              "id": "sku",
-              "type": "string"
-            },
-            "ean": {
-              "id": "ean",
-              "type": "string"
-            },
-            "asin": {
-              "id": "asin",
-              "type": "string"
-            },
-            "upc": {
-              "id": "id",
-              "type": "string"
-            },
-            "id": {
-              "id": "id",
-              "type": "string"
-            }
-          }
+          "type": "string",
+          "description": "Product condition."
         },
         "stock_information": {
           "id": "stock_information",
           "type": "object",
-          "required": [
-            "in_stock"
-          ],
+          "description": "Stock information object.",
           "properties": {
             "in_stock": {
               "id": "in_stock",
-              "type": "boolean"
+              "type": "boolean",
+              "description": "Whether the product i in stock or not."
             },
             "inventory_level": {
               "id": "inventory_level",
-              "type": "integer"
+              "type": "number",
+              "description": "Amount of products units in stock.",
+              "minimum": 0
             },
             "inventory_unit": {
               "id": "inventory_unit",
-              "type": "string"
+              "type": "string",
+              "description": "Type of product inventory unit."
             }
-          }
+          },
+          "required": [
+            "in_stock"
+          ]
         },
         "description": {
           "id": "description",
           "type": "array",
+          "description": "List of product descriptions in different languages.",
           "items": {
             "type": "object",
             "properties": {
               "language": {
                 "id": "language",
-                "type": "string"
+                "type": "string",
+                "description": "Language of product description."
               },
               "value": {
                 "id": "value",
-                "type": "string"
+                "type": "string",
+                "description": "Product description."
               }
             }
           }
         },
         "additional_attributes": {
+          "id": "additional_attributes",
+          "type": "object",
+          "description": "Product attributes.",
           "properties": {
             "colors": {
+              "id": "colors",
               "type": "array",
+              "description": "Array with product colors.",
               "items": {
                 "type": "string"
               }
             },
             "sizes": {
+              "id": "sizes",
               "type": "array",
+              "description": "Array with product sizes.",
               "items": {
                 "type": "string"
               }
             },
             "weight": {
-              "type": "number"
+              "id": "weight",
+              "type": "number",
+              "description": "Product weight."
             },
             "dimensions": {
+              "id": "dimensions",
               "type": "object",
+              "description": "Product dimensions.",
               "properties": {
                 "length": {
-                  "type": "number"
+                  "id": "length",
+                  "type": "number",
+                  "description": "Product length."
                 },
                 "width": {
-                  "type": "number"
+                  "id": "width",
+                  "type": "number",
+                  "description": "Product width."
                 },
                 "height": {
-                  "type": "number"
+                  "id": "height",
+                  "type": "number",
+                  "description": "Product height."
                 }
               },
               "required": [
@@ -183,16 +145,25 @@
         "categories": {
           "id": "categories",
           "type": "array",
+          "description": "List of product categories.",
           "items": {
             "type": "object",
             "properties": {
+              "category_id": {
+                "id": "category_id",
+                "type": "string",
+                "description": "Product category id."
+              },
               "language": {
                 "id": "language",
-                "type": "string"
+                "type": "string",
+                "description": "Product category name language.",
+                "pattern": "^[A-Za-z]{2}$"
               },
               "value": {
                 "id": "value",
-                "type": "string"
+                "type": "string",
+                "description": "Product category name."
               }
             }
           }
@@ -200,29 +171,44 @@
         "picture_urls": {
           "id": "picture_urls",
           "type": "array",
+          "description": "List of product images.",
           "items": [
             {
               "type": "object",
               "properties": {
                 "id": {
                   "id": "id",
-                  "type": "integer"
+                  "type": "integer",
+                  "description": "Product image id."
+                },
+                "pos": {
+                  "id": "pos",
+                  "type": "integer",
+                  "description": "Product image position."
                 },
                 "url_original": {
                   "id": "url_original",
-                  "type": "string"
+                  "type": "string",
+                  "description": "Original image url.",
+                  "pattern": "^(https?|ftp):\/\/.+$"
                 },
                 "url_big": {
                   "id": "url_big",
-                  "type": "string"
+                  "type": "string",
+                  "description": "Large image url.",
+                  "pattern": "^(https?|ftp):\/\/.+$"
                 },
                 "url_medium": {
                   "id": "url_medium",
-                  "type": "string"
+                  "type": "string",
+                  "description": "Medium image url.",
+                  "pattern": "^(https?|ftp):\/\/.+$"
                 },
                 "url_small": {
                   "id": "url_small",
-                  "type": "string"
+                  "type": "string",
+                  "description": "Thumbnail image url.",
+                  "pattern": "^(https?|ftp):\/\/.+$"
                 }
               }
             }
@@ -231,22 +217,27 @@
         "brand": {
           "id": "brand",
           "type": "object",
+          "description": "Product brand.",
           "properties": {
             "id": {
               "id": "id",
-              "type": "integer"
+              "type": "integer",
+              "description": "Brand id."
             },
             "name": {
               "id": "name",
               "type": "object",
+              "description": "Brand name in given language.",
               "properties": {
                 "language": {
                   "id": "language",
-                  "type": "string"
+                  "type": "string",
+                  "description": "Brand name language."
                 },
                 "value": {
                   "id": "value",
-                  "type": "string"
+                  "type": "string",
+                  "description": "Brand name."
                 }
               }
             }
@@ -255,33 +246,52 @@
         "variants": {
           "id": "variants",
           "type": "array",
+          "description": "List of product variants.",
           "items": [
             {
-              "$ref": "#/original_reference"
+              "type": "object",
+              "properties": {
+                "original_reference": {
+                  "id": "original_reference",
+                  "type": "string",
+                  "description": "The original identifier in the data source, i. E. on the platform, in the shop system."
+                }
+              }
+            }
+          ]
+        },
+        "shipping": {
+          "id": "shipping",
+          "type": "array",
+          "description": "List of product shipping providers / shipping options.",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "shipping_service": {
+                  "id": "shipping_service",
+                  "type": "string",
+                  "description": "Shipping service name."
+                },
+                "price": {
+                  "id": "price",
+                  "type": "number",
+                  "description": "Shipping service price."
+                }
+              }
             }
           ]
         }
       },
       "required": [
-        "id",
-        "source_id",
-        "original_reference",
         "url",
         "created_at",
-        "updated_at",
-        "name",
         "active",
-        "currency",
-        "price_per_unit",
-        "tax_rate",
         "description",
         "categories",
         "picture_urls",
         "stock_information"
       ]
     }
-  },
-  "required": [
-    "product"
   ]
 }

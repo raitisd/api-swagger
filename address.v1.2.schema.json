@@ -4,45 +4,53 @@
   "type": "object",
   "properties": {
     "type": {
-      "id": "address/type",
+      "id": "type",
       "type": "string"
     },
     "name": {
-      "id": "address/name",
-      "type": "string"
+      "id": "name",
+      "type": "string",
+      "description": "The name of the person or entity this address belongs to."
     },
     "line_1": {
-      "id": "address/line_1",
-      "type": "string"
+      "id": "line_1",
+      "type": "string",
+      "description": "Additional information to further specify this address."
     },
     "line_2": {
-      "id": "address/line_2",
-      "type": "string"
+      "id": "line_2",
+      "type": "string",
+      "description": "Additional information to further specify this address."
     },
     "city": {
-      "id": "address/city",
-      "type": "string"
+      "id": "city",
+      "type": "string",
+      "description": "The name of the city or town."
     },
     "region": {
-      "id": "address/region",
-      "type": "string"
+      "id": "region",
+      "type": "string",
+      "description": "The first-level administrative division of the country, e.g. a state, province, or region name."
     },
     "zip": {
-      "id": "address/zip",
-      "type": "string"
+      "id": "zip",
+      "type": "string",
+      "description": "The postal code."
     },
     "country": {
-      "id": "address/country",
+      "id": "country",
       "type": "string",
-      "pattern": "[A-Za-z]{2}"
+      "pattern": "[A-Z]{2}",
+      "description": "ISO 3166-1 alpha-2 letter country codes."
     },
     "verified": {
-      "id": "address/verified",
+      "id": "verified",
       "type": "boolean"
     },
     "default": {
-      "id": "address/default",
-      "type": "boolean"
+      "id": "default",
+      "type": "boolean",
+      "description": "True, if this address is set as the default address."
     }
   }
 }

@@ -2,7 +2,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "itembase API",
+        "title": "itembase sandbox API",
         "description": "An API for requesting data from users connected to itembase.<p>You can issue range queries by datetimes or get single entities by id.</p><p>There are four entity types: Transaction, Product, Buyer and Profile. Entities that originate from the same data connection have the same <i>source_id</i>. Get the Profile resource which describes the user's profile on the remote platform (e.g. a seller's account, a shop profile) to understand where the related entities (i. E. with the same source_id) originate.</p>",
         "version": "1.0.0"
     },
@@ -42,7 +42,7 @@
                     "200": {
                         "description": "Response entity will contain the single requested Transaction entity listed under the \"documents\" array in the response payload.",
                         "schema": {
-                            "$ref": "#/definitions/Transaction"
+                            "$ref": "./transaction.v1.4.schema.json#"
                         }
                     },
                     "default": {
@@ -130,7 +130,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/Transaction"
+                                "$ref": "./transaction.v1.4.schema.json#"
                             }
                         }
                     },
@@ -179,7 +179,7 @@
                     "200": {
                         "description": "Response entity will contain the single requested Product entity listed under the \"documents\" array in the response payload.",
                         "schema": {
-                            "$ref": "#/definitions/Product"
+                            "$ref": "./product.v1.2.schema.json#"
                         }
                     },
                     "default": {
@@ -267,7 +267,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "./product.v1.2.schema.json#"
                             }
                         }
                     },
@@ -309,7 +309,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/Profile"
+                                "$ref": "./profile.v1.2.schema.json#"
                             }
                         }
                     },
@@ -358,7 +358,7 @@
                     "200": {
                         "description": "A Buyer",
                         "schema": {
-                            "$ref": "#/definitions/Buyer"
+                            "$ref": "./buyer.v1.2.schema.json#"
                         }
                     },
                     "default": {
@@ -552,7 +552,7 @@
                     "items": {
                         "allOf": [
                             {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "./product.v1.2.schema.json#"
                             },
                             {
                                 "properties": {
@@ -618,7 +618,7 @@
                     }
                 },
                 "buyer": {
-                    "$ref": "#/definitions/Buyer"
+                    "$ref": "./buyer.v1.2.schema.json#"
                 }
             }
         },

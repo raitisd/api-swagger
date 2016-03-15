@@ -1,15 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "http://api.itembase.com/v1/currency.v1.0.schema.json",
-  "type": "object",
-  "required": [
-    "currency"
-  ],
-  "properties": {
-    "currency": {
-      "id": "currency",
-      "type": "string",
-      "pattern": "^[A-F]{3}$"
-    }
-  }
+  "type": "string",
+  "pattern": "^[A-Z]{3}$"  
 }

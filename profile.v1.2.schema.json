@@ -20,15 +20,18 @@
     },
     "original_reference": {
       "id": "original_reference",
-      "type": "string"
+      "type": "string",
+      "description": "The identifier of this profile's owner as defined by the source, e.g. an eBay EIASToken."
     },
     "platform_id": {
       "id": "platform_id",
-      "type": "string"
+      "type": "string",
+      "description": "Identifier of the platform as defined by the source itself, for instance, amazon.com id is: ATVPDKIKX0DER"
     },
     "platform_name": {
       "id": "platform_name",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the platform, mostly a domain name like amazon.com"
     },
     "active": {
       "id": "active",
@@ -44,45 +47,44 @@
     },
     "display_name": {
       "id": "display_name",
-      "type": "string"
+      "type": "string",
+      "description": "The name of the resource owner's account on the remote platform, e.g. an eBay username."
     },
     "url": {
       "id": "url",
       "type": "string",
-      "pattern": "((([A-Za-z]{3,9}:(?:\\\/\\\/)?)(?:[\\-;:&=\\+\\$,\\w]+@)?[A-Za-z0-9\\.\\-]+|(?:www\\.|[\\-;:&=\\+\\$,\\w]+@)[A-Za-z0-9\\.\\-]+)((?:\\\/[\\+~%\\\/\\.\\w\\-]*)?\\??(?:[\\-\\+=&;%@\\.\\w]*)#?(?:[\\.\\!\\\/\\\\\\w]*))?)"
+      "pattern": "^(https?|ftp|mailto)?:\/\/.+$"
     },
     "avatar_url": {
       "id": "avatar_url",
       "type": "string",
-      "pattern": "((([A-Za-z]{3,9}:(?:\\\/\\\/)?)(?:[\\-;:&=\\+\\$,\\w]+@)?[A-Za-z0-9\\.\\-]+|(?:www\\.|[\\-;:&=\\+\\$,\\w]+@)[A-Za-z0-9\\.\\-]+)((?:\\\/[\\+~%\\\/\\.\\w\\-]*)?\\??(?:[\\-\\+=&;%@\\.\\w]*)#?(?:[\\.\\!\\\/\\\\\\w]*))?)"
+      "pattern": "^(https?|ftp):\/\/.+$"
     },
     "language": {
       "id": "language",
       "type": "string",
-      "pattern": "^[A-Za-z]{2}$"
+      "pattern": "^[a-z]{2}$"
     },
     "locale": {
       "id": "locale",
       "type": "string",
-      "pattern": "^[a-z]{2}-[A-Z]{2}$"
+      "pattern": "^[a-z]{2}_[A-Z]{2}$"
     },
     "currency": {
-      "id": "currency",
-      "type": "string",
-      "pattern": "^[A-Z]{3}$"
+      "$ref": "./currency.v1.0.schema.json#"
     },
     "contact": {
-      "$ref": "contact.v1.0.schema.json#/"
+      "$ref": "./contact.v1.0.schema.json#"
     },
     "created_at": {
       "id": "created_at",
       "type": "string",
-      "format": "date-time"
+      "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
     },
     "updated_at": {
       "id": "updated_at",
       "type": "string",
-      "format": "date-time"
+      "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z)$"
     }
   }
 }

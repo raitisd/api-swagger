@@ -3,57 +3,59 @@
   "id": "http://api.itembase.com/v1/contact.v1.0.schema.json",
   "type": "object",
   "properties": {
-    "contact": {
-      "type": "object",
-      "properties": {
-        "addresses": {
-          "id": "contact/addresses",
-          "type": "array",
-          "items": {
-            "$ref": "address.v1.2.schema.json#/"
+    "addresses": {
+      "id": "contact/addresses",
+      "type": "array",
+      "items": {
+        "$ref": "./address.v1.2.schema.json#"
+      }
+    },
+    "emails": {
+      "id": "contact/emails",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9\\.!#$%&'*+/=?^_`{|}~-]+@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])$"
+          },
+          "type": {
+            "type": "string"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "default": {
+            "type": "boolean"
           }
-        },
-        "emails": {
-          "id": "contact/emails",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "value": {
-                "type": "string",
-                "pattern": "^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$"
-              },
-              "type": {
-                "type": "string"
-              },
-              "verified": {
-                "type": "boolean"
-              },
-              "default": {
-                "type": "boolean"
-              }
-            }
-          }
-        },
-        "phones": {
-          "id": "contact/phones",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "value": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string"
-              },
-              "verified": {
-                "type": "boolean"
-              },
-              "default": {
-                "type": "boolean"
-              }
-            }
+        }
+      }
+    },
+    "phones": {
+      "id": "contact/phones",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "properties": {
+          "value": {
+            "type": "string",
+            "pattern": "^[0-9+\\ -/\\(\\)]+$"
+          },
+          "type": {
+            "type": "string"
+          },
+          "verified": {
+            "type": "boolean"
+          },
+          "default": {
+            "type": "boolean"
           }
         }
       }
