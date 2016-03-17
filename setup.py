@@ -6,6 +6,6 @@ setup(name='api-swagger',
       author='John Wiesel',
       author_email='jw@itembase.biz',
       url='https://www.itembase.com/',
-      packages=['api-swagger'],
+      py_modules=['api-swagger'],
      )
 
